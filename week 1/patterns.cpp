@@ -106,13 +106,135 @@ int main()
 
 
     //Inverted Full pyramid
-    for (int row = 0; row < n; row++) {
-        for (int spc = 0; spc < row; spc++) {
-            cout << " ";
-        }
-        for (int col = 0; col < n - row; col++) {
-            cout << "* ";
-        }
-        cout << endl;
+    // for (int row = 0; row < n; row++) {
+    //     for (int spc = 0; spc < row; spc++) {
+    //         cout << " ";
+    //     }
+    //     for (int col = 0; col < n - row; col++) {
+    //         cout << "* ";
+    //     }
+    //     cout << endl;
+    // }
+
+
+    // Solid diamond
+    // for (int row = 0; row < n; row++) {
+    //     for (int spc = 0; spc < n - row - 1; spc++) {
+    //         cout << " ";
+    //     }
+    //     for (int col = 0; col < row + 1; col++) {
+    //         cout << "* ";
+    //     }
+    //     cout << endl;
+    // }
+    // for (int row = 0; row < n; row++) {
+    //     for (int spc = 0; spc < row; spc++) {
+    //         cout << " ";
+    //     }
+    //     for (int col = 0; col < n - row; col++) {
+    //         cout << "* ";
+    //     }
+    //     cout << endl;
+    // }
+
+
+    // Hollow diamond
+  //   for (int row = 0; row < n; row++) {
+  //   // spaces
+  //   for (int col = 0; col < n - row - 1; col++) {
+  //     cout << " ";
+  //   }
+  //   // stars
+  //   for (int col = 0; col < 2 * row + 1; col++) {
+  //     if (col == 0 || col == 2 * row) {
+  //       cout << "*";
+  //     } else {
+  //       cout << " ";
+  //     }
+  //   }
+  //   cout << endl;
+  // }
+
+  // for (int row = 0; row < n; row++) {
+  //   // spaces
+  //   for (int col = 0; col < row; col++) {
+  //     cout << " ";
+  //   }
+  //   // stars
+  //   for (int col = 0; col < 2 * n - 2 * row - 1; col++) {
+  //     if (col == 0 || col == 2 * n - 2 * row - 2) {
+  //       cout << "*";
+  //     } else {
+  //       cout << " ";
+  //     }
+  //   }
+  //   cout << endl;
+  // }
+
+
+  // flipped solid diamond
+  // for(int row = 0; row < n; row++){
+  //   for(int col=0; col<n-row; col++) {
+  //     cout<<"*";
+  //   }
+  //   //spaces
+  //   for(int col= 0; col<2*row+1;col++){
+  //     cout<<" ";
+  //   }
+
+  //   for(int col=0;col<n-row; col++) {
+  //     cout<<"*";
+  //   }
+  //   cout<<endl;
+  // }
+  // for(int row=0; row<n; row++) {
+  //   for(int col=0; col<row+1; col++) {
+  //     cout<<"*";
+  //   }
+  //   //spaces
+  //   for(int col=0; col<2*n-2*row-1; col++){
+  //     cout<<" ";
+  //   }
+  //   for(int col=0; col<row+1; col++) {
+  //     cout<<"*";
+  //   }
+  //   cout<<endl;
+  // }
+
+
+  // Fancy pattern #2
+  // for(int row=0; row<n ; row++){
+  //   for(int col = 0; col< row+1; col++) {
+  //     cout<<row+1;
+  //     if(col<row){
+  //       cout<<"*";
+  //     }
+  //   }
+  //   cout<<endl;
+  // }
+  // for(int row=0; row<n ; row++){
+  //   for(int col = 0; col< n-row; col++) {
+  //     cout<<n-row;
+  //     if(col != n-row-1){
+  //       cout<<"*";
+  //     }
+  //   }
+  //   cout<<endl;
+  // }
+
+
+  // Alphabet Palindrome Pyramid 
+  for(int row=0; row<n; row++) {
+    for(int col=0; col<row+1; col++) {
+      int ans = col;
+      char ch = ans + 'A';
+      cout<<ch;
     }
+    for(int col=row; col>=1; col--) {
+      int ans = col-1;
+      char ch = ans + 'A';
+      cout<<ch;
+    }
+    cout<<endl;
+  }
 } 
