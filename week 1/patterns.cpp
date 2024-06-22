@@ -224,16 +224,35 @@ int main()
 
 
   // Alphabet Palindrome Pyramid 
+  // for(int row=0; row<n; row++) {
+  //   for(int col=0; col<row+1; col++) {
+  //     int ans = col;
+  //     char ch = ans + 'A';
+  //     cout<<ch;
+  //   }
+  //   for(int col=row; col>=1; col--) {
+  //     int ans = col-1;
+  //     char ch = ans + 'A';
+  //     cout<<ch;
+  //   }
+  //   cout<<endl;
+  // }
+
+
+  //H.W pattern
   for(int row=0; row<n; row++) {
-    for(int col=0; col<row+1; col++) {
-      int ans = col;
-      char ch = ans + 'A';
-      cout<<ch;
+    for(int col=0; col<n-row-1; col++) {
+      cout<<" ";
     }
-    for(int col=row; col>=1; col--) {
-      int ans = col-1;
-      char ch = ans + 'A';
-      cout<<ch;
+    //numbers
+    for(int col=0; col<row+1; col++) {
+      cout<<col+row+1;
+    }
+    //reverse number
+    int start = 2*row;
+    for(int col=0; col<row; col++){
+      cout<<start;
+      start--;
     }
     cout<<endl;
   }
