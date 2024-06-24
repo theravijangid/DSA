@@ -240,20 +240,65 @@ int main()
 
 
   //H.W pattern
-  for(int row=0; row<n; row++) {
-    for(int col=0; col<n-row-1; col++) {
-      cout<<" ";
+  // for(int row=0; row<n; row++) {
+  //   for(int col=0; col<n-row-1; col++) {
+  //     cout<<" ";
+  //   }
+  //   //numbers
+  //   for(int col=0; col<row+1; col++) {
+  //     cout<<col+row+1;
+  //   }
+  //   //reverse number
+  //   int start = 2*row;
+  //   for(int col=0; col<row; col++){
+  //     cout<<start;
+  //     start--;
+  //   }
+  //   cout<<endl;
+  // }
+
+
+  // numeric hollow half pyramid
+  // for (int row = 0; row < n; row = row + 1) {
+  //   if (row == 0 || row == n - 1) {
+  //     for (int col = 0; col < row + 1; col++) {
+  //       cout << col + 1 << " ";
+  //     }
+  //   } else {
+  //     cout << 1;
+  //     // spaces
+  //     for (int col = 0; col < 2 * row - 1; col++) {
+  //       cout << " ";
+  //     }
+  //     // numbers
+  //     cout << row + 1;
+  //   }
+  //   cout << endl;
+  // }
+
+  //optimized soln of above
+  // for(int row=0; row<n ; row++) {
+  //   for(int col=0; col< row+1; col++) {
+  //     if(col==0 || col == row || row==n-1) {
+  //       cout<<col+1;
+  //     }
+  //     else {
+  //       cout<<" ";
+  //     }
+  //   }
+  //   cout<<endl;
+  // }
+
+
+  // numeric hollow inverted  half pyramid
+  for (int row = 0; row < n; row = row + 1) {
+    for (int col = 0; col < n - row; col++) {
+      if (col == 0 || row == 0 || col == n - row - 1) {
+        cout << row + 1 + col;
+      } else {
+        cout << " ";
+      }
     }
-    //numbers
-    for(int col=0; col<row+1; col++) {
-      cout<<col+row+1;
-    }
-    //reverse number
-    int start = 2*row;
-    for(int col=0; col<row; col++){
-      cout<<start;
-      start--;
-    }
-    cout<<endl;
+    cout << endl;
   }
 } 

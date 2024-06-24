@@ -34,9 +34,10 @@ int main() {
     // int a = 5;
     // cout<< (++a) * (++a) << endl;
 
-    for(int i=0; i<5; i++) {
-        if(i==2) continue;
-        cout<<i<<endl;
-    }
+    // continue
+    // for(int i=0; i<5; i++) {
+    //     if(i==2) continue;
+    //     cout<<i<<endl;
+    // }
 
 }
