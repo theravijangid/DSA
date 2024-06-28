@@ -27,13 +27,25 @@ bool getPrime(int n) {
 
     if( n == 1 || n==2) return true;
 
-    int i=2;
-    if(n%i == 0) {
-        return false;
-    } else {
-        return true;
+    for(int i=2; i*i<=n; i++) {
+        if(n%i==0 ){
+            cout<<"not";      
+        } else {
+            cout<<"prime";
+        }
     }
 }
+
+
+int getPrimeUptoN(int n) {
+    for(int i=2; i<=n; i++) {
+        if(!n%i==0) {
+            cout<<i<<" ";
+        }
+    }
+}
+
+
 
 int main() {
     int n;
@@ -57,12 +69,18 @@ int main() {
     // cout<<"Factorial of "<<n<<" is "<<ans<<endl;
 
     // Check number prime or not
-    if(getPrime(n)) {
-        cout<<"It is a prime"<<endl;
-    }
-    else {
-        cout<<"Not a prime";
-    }
+    // if(getPrime(n)) {
+    //     cout<<"It is a prime"<<endl;
+    // }
+    // else {
+    //     cout<<"Not a prime";
+    // }
+
+
+    // Print prime upto N
+    
+    
+    
 
     return 0;
 }
