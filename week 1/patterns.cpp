@@ -291,13 +291,43 @@ int main()
 
 
   // numeric hollow inverted  half pyramid
-  for (int row = 0; row < n; row = row + 1) {
-    for (int col = 0; col < n - row; col++) {
-      if (col == 0 || row == 0 || col == n - row - 1) {
-        cout << row + 1 + col;
-      } else {
-        cout << " ";
-      }
+  // for (int row = 0; row < n; row = row + 1) {
+  //   for (int col = 0; col < n - row; col++) {
+  //     if (col == 0 || row == 0 || col == n - row - 1) {
+  //       cout << row + 1 + col;
+  //     } else {
+  //       cout << " ";
+  //     }
+  //   }
+  //   cout << endl;
+  // }
+
+
+  // numeric palindrome equilateral triangle
+  // for (int row = 0; row < n; row++) {
+  //   for (int col = 0; col < n - row; col++) {
+  //     cout << " ";
+  //   }
+  //   for (int col = 0; col < row + 1; col++) {
+  //     cout << col + 1;
+  //   }
+  //   for (int col = row; col >= 1; col--) {
+  //     cout << col;
+  //   }
+  //   cout << endl;
+  // }
+
+
+  // solid half pyramid
+  for (int row = 0; row < n; row++) {
+    for (int col = 0; col < row + 1; col++) {
+      cout << "*";
+    }
+    cout << endl;
+  }
+  for (int row = 0; row < n; row++) {
+    for (int col = 0; col < n - row - 1; col++) {
+      cout << "*";
     }
     cout << endl;
   }
