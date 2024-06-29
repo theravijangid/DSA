@@ -319,16 +319,73 @@ int main()
 
 
   // solid half pyramid
-  for (int row = 0; row < n; row++) {
-    for (int col = 0; col < row + 1; col++) {
-      cout << "*";
-    }
-    cout << endl;
-  }
-  for (int row = 0; row < n; row++) {
-    for (int col = 0; col < n - row - 1; col++) {
-      cout << "*";
-    }
-    cout << endl;
-  }
+  // for (int row = 0; row < n; row++) {
+  //   for (int col = 0; col < row + 1; col++) {
+  //     cout << "*";
+  //   }
+  //   cout << endl;
+  // }
+  // for (int row = 0; row < n; row++) {
+  //   for (int col = 0; col < n - row - 1; col++) {
+  //     cout << "*";
+  //   }
+  //   cout << endl;
+  // }
+
+
+  // floyds triangle
+  // int count = 1;
+  // for (int row = 0; row < n; row++) {
+  //   for (int col = 0; col < row + 1; col++) {
+  //     cout << count;
+  //     count++;
+  //   }
+  //   cout << endl;
+  // }
+
+  // fancy pattern #1
+  // for (int row = 0; row < n; row++) {
+  //   for (int col = 0; col < n + 3 - row; col++) {
+  //     cout << "*";
+  //   }
+  //   for (int col = 0; col < row + 1; col++) {
+  //     cout << row + 1;
+  //     if (col != row) {
+  //       cout << "*";
+  //     }
+  //   }
+  //   for (int col = 0; col < n + 3 - row; col++) {
+  //     cout << "*";
+  //   }
+  //   cout << endl;
+  // }
+
+
+  // Butter fly pattern
+  // for (int row = 0; row < n; row++) {
+  //   for (int col = 0; col < row + 1; col++) {
+  //     cout << "*";
+  //   }
+  //   for (int col = 0; col < 2 * n - 2 * row - 2; col++) {
+  //     cout << " ";
+  //   }
+  //   for (int col = 0; col < row + 1; col++) {
+  //     cout << "*";
+  //   }
+  //   cout << endl;
+  // }
+  // for (int row = 0; row < n; row++) {
+  //   for (int col = 0; col < n - row; col++) {
+  //     cout << "*";
+  //   }
+  //   for (int col = 0; col < row * 2; col++) {
+  //     cout << " ";
+  //   }
+  //   for (int col = 0; col < n - row; col++) {
+  //     cout << "*";
+  //   }
+  //   cout << endl;
+  // }
+
+
 } 
