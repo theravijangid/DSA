@@ -1,9 +1,10 @@
 #include<iostream>
+#include<cmath>
 
 using namespace std;
 
 float getAreaOfcircle(int r){
-    return 2*2.14*r;
+    return 2.14*r*r;
 }
 
 int getOddEven(int n) {
@@ -23,34 +24,58 @@ long long int getFactorial(int n) {
 }
 
 bool getPrime(int n) {
-    if(n<=1) return false;
-
-    if( n == 1 || n==2) return true;
-
-    for(int i=2; i*i<=n; i++) {
-        if(n%i==0 ){
-            cout<<"not";      
-        } else {
-            cout<<"prime";
+    int i=2;
+    for(i=2; i<n; i++) {
+        if(n%i == 0) {
+            return false;
         }
     }
+    return true;
 }
 
 
-int getPrimeUptoN(int n) {
-    for(int i=2; i<=n; i++) {
-        if(!n%i==0) {
-            cout<<i<<" ";
-        }
+int binaryToDecimal(int n){
+    int ans =0;
+    int i=0;
+    while(n>0) {
+        int bit = n%10;
+        ans = ans + bit * pow(2,i++);
+        n=n/10;
     }
+    return ans;
 }
 
 
+int decimalToBinary(int n) {
+    // divison method
+    int binarynum = 0;
+    int i=0;
+    while (n>0)
+    {
+        int bit = n%2;
+        binarynum = bit*pow(10,i++) + binarynum;
+        n = n/2;
+    }
+    return binarynum;   
+}
+
+
+int decimalToBinaryy(int n) {
+    // bitwise method
+    int binarynum=0;
+    int i=0;
+    while(n>0) {
+        int bit = (n&1);
+        binarynum = bit*pow(10,i++) + binarynum;
+        n = n>>1;
+    }
+    return binarynum;
+}
 
 int main() {
     int n;
     cout<<"Enter value for n:"<<endl;
-    cin>>n;
+    // cin>>n;
 
     // Area of circle
     // cout<<"Area of circle is: "<<getAreaOfcircle(n);
@@ -69,18 +94,77 @@ int main() {
     // cout<<"Factorial of "<<n<<" is "<<ans<<endl;
 
     // Check number prime or not
-    // if(getPrime(n)) {
-    //     cout<<"It is a prime"<<endl;
-    // }
-    // else {
-    //     cout<<"Not a prime";
+    // bool isPrime = getPrime(n);
+    // if(isPrime) {
+    //     cout<<"Prime\n";
+    // } else {
+    //     cout<<"Not a Prime\n";
     // }
 
 
     // Print prime upto N
-    
-    
-    
+    // for(int i=2; i<=n; i++) {
+    //     bool isiPrime = getPrime(i);
+    //     if(isiPrime) {
+    //         cout<<i<<" ";
+    //     }
+    // }
+
+
+    // Reverse a number leetcode
+    // int ans=0, rem=0;
+    // bool isNeg;
+    // if(n <= INT_MIN) {
+    //     return 0;
+    // }
+    // if(n < 0) {
+    //     isNeg = true;
+    //     n = -n;
+    // }
+    // while(n>0) {
+    //     if(ans > INT_MAX/10) {
+    //         return 0;
+    //     }
+    //     int digit = n % 10;
+    //     ans= ans*10 + digit;
+    //     n = n/10;
+    // }
+    // return isNeg ? -ans : ans;
+
+
+    //set the kth bit
+    // int k;
+    // cin>>k;
+
+    // int mask = 1<<k;
+    // int ans = n|mask;
+    // cout<<ans;
+
+
+    // conver temperature
+    // float temp;
+    // cin>>temp;
+    // double k = temp + 273.15;
+    // double f = temp + 1.80 + 32.00;
+    // cout<<"The celcious "<<temp<<" converted to kelvin:"<<k<<" & fahrenhiet f:"<<f;
+
+
+    // binary to decimal coversion
+    // cin>>n;
+    // int val = binaryToDecimal(n);
+    // cout<<"conversion of binary:"<<n<<" to decimal is:"<<val;
+
+
+    // decimal to  binary coversion using divison method
+    // cin>>n;
+    // int val = decimalToBinary(n);
+    // cout<<"\n"<<val;
+
+
+    // decimal to  binary coversion using bitwise method
+    cin>>n;   
+    int val = decimalToBinaryy(n);
+    cout<<"Binary: "<<n<<" converted to decimal : "<<val;
 
     return 0;
 }

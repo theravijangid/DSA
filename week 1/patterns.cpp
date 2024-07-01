@@ -305,7 +305,7 @@ int main()
 
   // numeric palindrome equilateral triangle
   // for (int row = 0; row < n; row++) {
-  //   for (int col = 0; col < n - row; col++) {
+  //   for (int col = 0; col < n - row-1; col++) {
   //     cout << " ";
   //   }
   //   for (int col = 0; col < row + 1; col++) {
@@ -344,48 +344,100 @@ int main()
   // }
 
   // fancy pattern #1
-  // for (int row = 0; row < n; row++) {
-  //   for (int col = 0; col < n + 3 - row; col++) {
-  //     cout << "*";
-  //   }
-  //   for (int col = 0; col < row + 1; col++) {
-  //     cout << row + 1;
-  //     if (col != row) {
-  //       cout << "*";
+  // for(int row=0; row<n; row++) {
+  //   int start_num_index = 8-row;
+  //   int num = row+1;
+  //   int count = num;
+  //   for(int col=0; col<17; col++) {
+  //     if(col==start_num_index && count > 0) {
+  //       cout<<num;
+  //       start_num_index+=2;
+  //       count--;
+  //     } 
+  //     else {
+  //       cout<<"*";
   //     }
   //   }
-  //   for (int col = 0; col < n + 3 - row; col++) {
-  //     cout << "*";
-  //   }
-  //   cout << endl;
+  //   cout<<endl;
   // }
 
 
+  // fancy pattern #2
+  // int c=1;
+  // for(int i=0; i<n;i++){
+  //   for(int j=0;j<=i;j++) {
+  //     cout<<c;
+  //     c++;
+  //     if(j<i) {
+  //       cout<<"*";
+  //     }
+  //   }
+  //   cout<<endl;
+  // }
+  // int start = c-n;
+  // for(int i=0; i<n; i++) {
+  //   int k=start;
+  //   for(int j=0;j<=n-i-1;j++) {
+  //     cout<<k;
+  //     k++;
+  //     if(j<n-i-1) {
+  //       cout<<"*";
+  //     }
+  //   }
+  //   start = start - (n-i-1);
+  //   cout<<endl;
+  // }
+
+  // fancy pattern #3
+  // for(int i=0; i<n;i++) {
+  //   int cond = i <= n/2 ? 2*i : 2*(n-i-1);
+  //   for(int j=0;j<=cond; j++) {
+  //     if(j<=cond/2) {
+  //       cout<<j+1;
+  //     }
+  //     else{
+  //       cout<<cond-j+1;
+  //     }
+  //   }
+  //   cout<<endl;
+  // }
+
+
+  // Pascals triangle
+  // for(int i=1;i<=n;i++) {
+  //   int c =1;
+  //   for(int j=1; j<=i; j++) {
+  //     cout<<c<<" ";
+  //     c = c * (i-j) / j;
+  //   }
+  //   cout<<endl;
+  // }
+ 
   // Butter fly pattern
-  // for (int row = 0; row < n; row++) {
-  //   for (int col = 0; col < row + 1; col++) {
-  //     cout << "*";
-  //   }
-  //   for (int col = 0; col < 2 * n - 2 * row - 2; col++) {
-  //     cout << " ";
-  //   }
-  //   for (int col = 0; col < row + 1; col++) {
-  //     cout << "*";
-  //   }
-  //   cout << endl;
-  // }
-  // for (int row = 0; row < n; row++) {
-  //   for (int col = 0; col < n - row; col++) {
-  //     cout << "*";
-  //   }
-  //   for (int col = 0; col < row * 2; col++) {
-  //     cout << " ";
-  //   }
-  //   for (int col = 0; col < n - row; col++) {
-  //     cout << "*";
-  //   }
-  //   cout << endl;
-  // }
+  for (int row = 0; row < n; row++) {
+    for (int col = 0; col < row + 1; col++) {
+      cout << "*";
+    }
+    for (int col = 0; col < 2 * n - 2 * row - 2; col++) {
+      cout << " ";
+    }
+    for (int col = 0; col < row + 1; col++) {
+      cout << "*";
+    }
+    cout << endl;
+  }
+  for (int row = 0; row < n; row++) {
+    for (int col = 0; col < n - row; col++) {
+      cout << "*";
+    }
+    for (int col = 0; col < row * 2; col++) {
+      cout << " ";
+    }
+    for (int col = 0; col < n - row; col++) {
+      cout << "*";
+    }
+    cout << endl;
+  }
 
 
 } 
