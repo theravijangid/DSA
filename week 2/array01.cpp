@@ -138,8 +138,8 @@ int main() {
 
 
     // Reverse an array
-    int arr[7] = {10,20,30,40,50,60,70};
-    int size = 7;
+    // int arr[7] = {10,20,30,40,50,60,70};
+    // int size = 7;
     // int start = size-1;
     // while(start>=0) {
     //     cout<<arr[start]<<" ";
@@ -147,17 +147,81 @@ int main() {
     // }
 
     // by swap
-    int s =0;
-    int e = size-1;
-    while(s<=e) {
-        swap(arr[s], arr[e]);
+    // int s =0;
+    // int e = size-1;
+    // while(s<=e) {
+    //     swap(arr[s], arr[e]);
+    //     s++;
+    //     e--;
+    // }
+    // for(int i=0; i<size; i++) {
+    //     cout<<arr[i]<< " ";
+    // }
+
+
+    // Implement swap function 3 ways i.e s,e ; xor, temp var
+    // using two pointers
+    // int arr[8] = {10, 20, 30, 40, 50, 60, 70};
+    // int size = 7;
+    // int s = 0;
+    // int e = size - 1;
+
+    // while (s <= e) {
+    //     if (s == e) {
+    //     arr[s] = arr[s];
+    //     } else {
+    //     arr[s] = arr[s] + arr[e];
+    //     arr[e] = arr[s] - arr[e];
+    //     arr[s] = arr[s] - arr[e];
+    //     }
+    //     s++;
+    //     e--;
+    // }
+    // for (int i = 0; i < size; i++) {
+    //     cout << arr[i] << " ";
+    // }
+
+
+    // using temp var
+    // int arr[8] = {10, 20, 30, 40, 50, 60};
+    // int size = 6;
+    // int s = 0;
+    // int e = size - 1;
+    // int temp;
+
+    // while (s <= e) {
+    //     if (s == e) {
+    //     arr[s] = arr[s];
+    //     } else {
+    //     temp = arr[s];
+    //     arr[s] = arr[e];
+    //     arr[e] = temp;
+    //     }
+    //     s++;
+    //     e--;
+    // }
+
+    // for (int i = 0; i < size; i++) {
+    //     cout << arr[i] << " ";
+    // }
+
+
+    // using xor
+    int arr[] = {10, 20, 30, 40, 50, 60};
+    int size = 6;
+    int s = 0;
+    int e = size - 1;
+
+    while (s < e) {
+        arr[s] = arr[s] ^ arr[e];
+        arr[e] = arr[s] ^ arr[e];
+        arr[s] = arr[s] ^ arr[e];
         s++;
         e--;
     }
-    for(int i=0; i<size; i++) {
-        cout<<arr[i]<< " ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
     }
-
 
     return 0;
 }
