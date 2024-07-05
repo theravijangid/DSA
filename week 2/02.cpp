@@ -88,30 +88,30 @@ int main() {
 
 
     // Q Union with duplicates
-    vector<int> arr{1,2,3,4};
-    vector<int> brr{3,4,6};
-    vector<int> ans;
-    for(int i=0; i<arr.size(); i++) {
-            ans.push_back(arr[i]);
-    }
+    // vector<int> arr{1,2,3,4};
+    // vector<int> brr{3,4,6};
+    // vector<int> ans;
+    // for(int i=0; i<arr.size(); i++) {
+    //         ans.push_back(arr[i]);
+    // }
 
-    for(int i=0; i< brr.size(); i++) {
-        bool found = false;
-        for(int j=0; j<arr.size(); j++) {
-            if(brr[i] == arr[j]) {
-                found = true;
-                break;
-            }
-        }
-        if(!found) {
-            ans.push_back(brr[i]);
-        }
+    // for(int i=0; i< brr.size(); i++) {
+    //     bool found = false;
+    //     for(int j=0; j<arr.size(); j++) {
+    //         if(brr[i] == arr[j]) {
+    //             found = true;
+    //             break;
+    //         }
+    //     }
+    //     if(!found) {
+    //         ans.push_back(brr[i]);
+    //     }
         
-    }
+    // }
 
-    for(auto val: ans) {
-        cout<<val<<" ";
-    }
+    // for(auto val: ans) {
+    //     cout<<val<<" ";
+    // }
 
     // Q Intersection 
     // vector<int> arr{1,2,3,3,4,6,8};
