@@ -56,31 +56,31 @@ void printArr(int arr[][3]) {
 
 
 int main() {
-    // int arr[3][3];
+    int arr[3][3];
 
-    // int brr[3][3] = {
-    //     {1,2,3},
-    //     {4,5,6},
-    //     {7,2,8} };
+    int brr[3][3] = {
+        {1,2,3},
+        {4,5,6},
+        {7,2,8} };
 
-    // cout<<brr[2][2]<<endl;
+    cout<<brr[2][2]<<endl;
 
     // Row wise access
-    // for(int i=0; i<3; i++) {
-    //     for(int j=0; j<3; j++) {
-    //         cout<<brr[i][j]<< " ";
-    //     }
-    //     cout<<endl;
-    // }
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<3; j++) {
+            cout<<brr[i][j]<< " ";
+        }
+        cout<<endl;
+    }
 
 
     // col wise access
-    // for(int col=0; col<3; col++) {
-    //     for(int row=0; row<3; row++) {
-    //         cout<<brr[row][col]<<" ";
-    //     }
-    //     cout<<endl;
-    // } 
+    for(int col=0; col<3; col++) {
+        for(int row=0; row<3; row++) {
+            cout<<brr[row][col]<<" ";
+        }
+        cout<<endl;
+    } 
 
     // int arr[3][3]= {
     //     {1,2,3},
@@ -192,13 +192,13 @@ int main() {
     //     cout<<endl;
     // }
 
-    int row=3;
-    int col=5;
-    vector<vector<int> > arr(row, vector<int>(col, 78));
+    // int row=3;
+    // int col=5;
+    // vector<vector<int> > arr(row, vector<int>(col, 78));
 
-    vector<vector<int> > brr(5, vector<int>(5, -8));
-    cin>>brr[3][4];
-    cout<<brr[3][4];
+    // vector<vector<int> > brr(5, vector<int>(5, -8));
+    // cin>>brr[3][4];
+    // cout<<brr[3][4];
     // for(int i=0; i<brr.size(); i++) {
     //     for(int j=0; j<brr[i].size(); j++) {
     //         cout<<brr[i][j]<<" ";
