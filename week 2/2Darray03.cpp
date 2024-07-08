@@ -56,31 +56,31 @@ void printArr(int arr[][3]) {
 
 
 int main() {
-    int arr[3][3];
+    // int arr[3][3];
 
-    int brr[3][3] = {
-        {1,2,3},
-        {4,5,6},
-        {7,2,8} };
+    // int brr[3][3] = {
+    //     {1,2,3},
+    //     {4,5,6},
+    //     {7,2,8} };
 
-    cout<<brr[2][2]<<endl;
+    // cout<<brr[2][2]<<endl;
 
     // Row wise access
-    for(int i=0; i<3; i++) {
-        for(int j=0; j<3; j++) {
-            cout<<brr[i][j]<< " ";
-        }
-        cout<<endl;
-    }
+    // for(int i=0; i<3; i++) {
+    //     for(int j=0; j<3; j++) {
+    //         cout<<brr[i][j]<< " ";
+    //     }
+    //     cout<<endl;
+    // }
 
 
     // col wise access
-    for(int col=0; col<3; col++) {
-        for(int row=0; row<3; row++) {
-            cout<<brr[row][col]<<" ";
-        }
-        cout<<endl;
-    } 
+    // for(int col=0; col<3; col++) {
+    //     for(int row=0; row<3; row++) {
+    //         cout<<brr[row][col]<<" ";
+    //     }
+    //     cout<<endl;
+    // } 
 
     // int arr[3][3]= {
     //     {1,2,3},

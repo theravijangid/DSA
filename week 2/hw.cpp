@@ -44,6 +44,155 @@ void findMissing(int *a,int n) {
     }
 }
 
+void wavePrintCol(vector<vector<int>>a) {
+    int m=a.size();
+    int n=a[0].size();
+    for(int startCol = 0; startCol<n; startCol++) {
+        // even no of col => Top to Bottom
+        if((startCol & 1) == 0){
+            for(int i=0; i<m; i++) {
+                cout<<a[i][startCol]<<" ";
+            }
+        }
+        else {
+            // bottom to top -> odd cols
+            for(int i=m-1; i>=0; i--) {
+                cout<<a[i][startCol]<<" ";
+            }
+        }
+        
+    }
+}
+
+void wavePrintRow(vector<vector<int>>a) {
+    int m=a.size();
+    int n=a[0].size();
+    for(int startRow = 0; startRow<m; startRow++) {
+        //left to right  
+        if((startRow & 1) == 0) {
+            for(int i=0; i<n; i++) {
+                cout<<a[startRow][i]<<" ";
+            }
+        } 
+        else {
+            // right to left
+            for(int i=n-1; i>=0; i--) {
+                cout<<a[startRow][i]<<" ";
+            }
+        }  
+    }
+}
+
+
+void spiralMatrix(vector<vector<int>> a) {
+    int m = a.size();
+    int n = a[0].size();
+    int totalCount = m*n;
+
+    int startingRow = 0;
+    int endingCol = n-1;
+    int endingRow = m-1;
+    int startingCol = 0;
+
+    int count = 0;
+    while(count < totalCount) {
+        //print starting row
+        for(int i=startingCol; i<=endingCol && count<totalCount; i++) {
+            cout<<a[startingRow][i]<<" ";
+            count++;
+        }
+        startingRow++;
+
+        // print ending col
+        for(int i=startingRow; i<=endingRow && count<totalCount; i++) {
+            cout<<a[i][endingCol]<<" ";
+            count++;
+        }
+        endingCol--;
+
+        // print ending row
+        for(int i=endingCol; i>=startingCol && count<totalCount; i--) {
+            cout<<a[endingRow][i]<<" ";
+            count++;
+        }
+        endingRow--;
+
+        // print starting col
+        for(int i=endingRow; i>=startingRow && count<totalCount; i--) {
+            cout<<a[i][startingCol]<<" ";
+            count++;
+        }
+        startingCol++;
+    }
+
+}
+
+string addVectors(vector<int> a , vector<int> b) {
+    string ans;
+
+    int carry=0;
+    int i=a.size()-1;
+    int j=b.size()-1;
+
+    while(i>=0 && j>=0) {
+        int x = a[i] + b[j] + carry;
+        int digit = x%10;
+        ans.push_back(digit + '0');
+        int carry = x/10;
+        i--;
+        j--;
+    }
+
+    while (i>=0){
+        int x = a[i] + 0 + carry;
+        int digit = x%10;
+        ans.push_back(digit + '0');
+        int carry = x/10;
+        i--;
+    }
+    
+    while (j>=0)
+    {
+        int x = 0 + b[j] + carry;
+        int digit = x%10;
+        ans.push_back(digit + '0');
+        int carry = x/10;
+        j--;
+    }
+
+    if(carry) {
+        ans.push_back(carry + '0');
+    }
+
+    while(ans[ans.size()-1] == '0') {
+        ans.pop_back();
+    }
+    
+    reverse(ans.begin(), ans.end());
+    return ans;
+}
+
+vector<int> factorial(int N) {
+    vector<int> ans;
+    ans.push_back(1);
+    int carry=0;
+
+    for(int i=2; i<=N; i++) {
+        for(int j=0; j<ans.size(); j++) {
+            int x= ans[j]*i+carry;
+            ans[j] = x%10;
+            carry = x/10;
+        }
+        while(carry) {
+            ans.push_back(carry%10);
+            carry/=10;
+        }
+    }
+    reverse(ans.begin(), ans.end());
+    
+    return ans;
+}
+
 int main() {
     // SORT LEETCODE 75
     // vector<int> arr{1,1,0,2,0,1,2,0,1};
@@ -183,6 +332,90 @@ int main() {
     //     }
     //     if(isRepeated) break; 
     // }
+
+
+    //  COMMON ELEMENTS IN 3 SORTED ARRAYS
+    // vector<int> a{3,3,3};
+    // vector<int> b{3,3,3};
+    // vector<int> c{3,3,3};
+
+    // int i=0,j=0,k=0;
+    // int n1 = a.size();
+    // int n2 = b.size();
+    // int n3 = c.size();
+    // while(i<n1 && j<n2 && k<n3) {
+    //     while (i > 0 && a[i] == a[i - 1]) {
+    //         i++;
+    //     }
+   
+    //     while (j > 0  && b[j] == b[j - 1]) {
+    //         j++;
+    //     }
+
+    //     while (k > 0 && c[k] == c[k - 1]) {
+    //         k++;
+    //     }
+
+    //     if(a[i]==b[j] && b[j]==c[k]) {
+    //         cout<<a[i]<<" ";
+    //         i++;
+    //         j++;
+    //         k++;
+    //     }
+    //     else if(a[i] < b[j]) {
+    //         i++;
+    //     }
+    //     else if(b[j] < c[k]) {
+    //         j++;
+    //     }
+    //     else {
+    //         k++;
+    //     }
+    // }
+
+
+    // WAVE PRINT A MATRIX COL WISE
+    // vector<vector<int>> a{
+    //     {1,2,3,4},
+    //     {5,6,7,8},
+    //     {9,10,11,12}
+    // };
+
+    // cout<<"PRinting col wise Wave form"<<endl;
+    // wavePrintCol(a);
+    // cout<<endl;
+    // cout<<"PRinting row wise Wave form"<<endl;
+    // wavePrintRow(a);
+
+
+    // SPIRAL MATRIX
+    // cout<<"PRinting spiral matrix"<<endl;
+    // spiralMatrix(a);
+
+
+    // ADD TWO ARRAYS
+    // vector<int> a{1,2,3,4};
+    // vector<int> b{9,2,3};
+
+    // string ans = addVectors(a,b);
+    // cout<<"sum: "<<ans<<endl;
+
+
+
+    // FACTORIAL OF A LARGE NUMBER USING VECTOR/ ARRAY
+    // int N;
+    // cout<<"Enter number to find factorial"<<endl;
+    // cin>>N;
+    
+    // vector<int> result = factorial(N);
+
+    // for(int digit : result) {
+    //     cout<<digit;
+    // }
+
+
+    vector<int> ans{0,2};
+    cout<<ans.size();
 
     return 0;
     
