@@ -403,19 +403,15 @@ int main() {
 
 
     // FACTORIAL OF A LARGE NUMBER USING VECTOR/ ARRAY
-    // int N;
-    // cout<<"Enter number to find factorial"<<endl;
-    // cin>>N;
+    int N;
+    cout<<"Enter number to find factorial"<<endl;
+    cin>>N;
     
-    // vector<int> result = factorial(N);
+    vector<int> result = factorial(N);
 
-    // for(int digit : result) {
-    //     cout<<digit;
-    // }
-
-
-    vector<int> ans{0,2};
-    cout<<ans.size();
+    for(int digit : result) {
+        cout<<digit;
+    }
 
     return 0;
     
