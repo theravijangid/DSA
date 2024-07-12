@@ -144,10 +144,10 @@ int main() {
 
 
     // H.W FIND MISSING ELEMENT USING BINARY SEARCH
-    vector<int> a{1,3,4,5,6};
+    // vector<int> a{1,3,4,5,6};
 
-    int res = findMissing(a);
-    cout<<"Missing element is "<<res<<endl;
+    // int res = findMissing(a);
+    // cout<<"Missing element is "<<res<<endl;
 
 
     // LEETCODE 852 PEAK INDEX OF A MOUNTAIN ARRAY
@@ -156,6 +156,7 @@ int main() {
     // int ans = peakElement(a);
     // cout<<"Peak element is "<<ans<<endl;
 
+    
 
     return 0;
 }

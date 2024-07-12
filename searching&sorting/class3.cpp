@@ -55,6 +55,37 @@ int findQuotient(int dividend, int divisor){
     }
 }
 
+int oddOccurence(vector<int> a) {
+    int s=0;
+    int e=a.size()-1;
+
+    while(s<= e) {
+        int mid = s + (e-s)/2;
+
+        if(s == e) {
+            return s;
+        }
+
+        if(mid%2 == 0) {
+            if(a[mid] == a[mid+1]) {
+                s= mid+2;
+            } else {
+                e =mid;
+            }
+        }
+        else {
+            if(a[mid] == a[mid-1]) {
+                s = mid+1;
+            }
+            else {
+                e=mid-1;
+            }
+        }
+        
+    }
+    return -1;
+}
+
 int main() {
     // FINDING ELEMENT IN NEARLY SORTED ARRAY
     // vector<int> a{10,3,40,20,50,80,70};
@@ -66,24 +97,31 @@ int main() {
 
 
     // DIVISION USING BS
-    int dividend,divisor, precision;
-    cin>>dividend;
-    cin>>divisor;
-    int ans = findQuotient(dividend, divisor);
+    // int dividend,divisor, precision;
+    // cin>>dividend;
+    // cin>>divisor;
+    // int ans = findQuotient(dividend, divisor);
 
-    cout<<"Quotient is: "<<ans<<endl;
-    cout<<"Enter the precison "<<endl;
-    cin>>precision;
+    // cout<<"Quotient is: "<<ans<<endl;
+    // cout<<"Enter the precison "<<endl;
+    // cin>>precision;
 
-    double finalAns = ans;
-    double step = 0.1;
-    for(int i=0; i<precision; i++) {
-        for(double j=finalAns; j*divisor <= dividend; j+=step) {
-            finalAns = j;
-        }
-        step = step/10;
-    }
-    cout<<"Ans after precision is : "<<finalAns<<endl;
+    // double finalAns = ans;
+    // double step = 0.1;
+    // for(int i=0; i<precision; i++) {
+    //     for(double j=finalAns; j*divisor <= dividend; j+=step) {
+    //         finalAns = j;
+    //     }
+    //     step = step/10;
+    // }
+    // cout<<"Ans after precision is : "<<finalAns<<endl;
+
+
+    // ODD OCCURENCE OF AN ELEMENT IN ARRAY USING B.S
+    vector<int> a{4,1,2,1,2};
+    int ans = oddOccurence(a);
+    cout<<"Index of element "<<ans<<endl;
+    cout<<"Element is "<<a[ans]<<endl;
 
     return 0;
 }
