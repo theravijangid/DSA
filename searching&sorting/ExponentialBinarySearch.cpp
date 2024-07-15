@@ -29,6 +29,7 @@ int exponenstialSearch(int a[], int n, int x) {
 }
 
 int main() {
+    // Exponential Search using binary search for large arrays as it improves Time complexity 
     int a[] = {1,2,3,4,5,6,7,8,9,10,12,14,56};
     int n = sizeof(a)/sizeof(int);
     int x = 1;
