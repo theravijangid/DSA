@@ -28,12 +28,27 @@ int exponenstialSearch(int a[], int n, int x) {
     return binarySearch(a, i/2, min(i, n-1), x);
 }
 
+
+int infiniteExponentialSearch(int a[], int x) {
+    int i=0;
+    int j=1;
+    while (a[j] < x)
+    {
+        i = j;
+        j= i*2;
+    }
+
+    return binarySearch(a, i, j, x);
+    
+}
+
 int main() {
     // Exponential Search using binary search for large arrays as it improves Time complexity 
     int a[] = {1,2,3,4,5,6,7,8,9,10,12,14,56};
     int n = sizeof(a)/sizeof(int);
-    int x = 1;
-    int ans = exponenstialSearch(a, n, x);
+    int x = 56;
+    // int ans = exponenstialSearch(a, n, x);
+    int ans = infiniteExponentialSearch(a, x);
     cout<<ans<<endl;
 
     return 0;
