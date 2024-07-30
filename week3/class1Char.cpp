@@ -229,5 +229,9 @@ int main() {
     str.erase(5, 3);
     cout<<str<<endl;
 
+
+    // implement find and erase
+    
+
     return 0;
 }
