@@ -108,13 +108,43 @@ int main() {
     // cout<< endl;
 
 
-    int a = 5;
-    cout<<"Address of a : "<< &a << endl;
-    int* ptr = &a;
-    cout<<"Address stored in ptr : "<< ptr << endl;
-    cout<<"Address of ptr inside main function : "<< &ptr << endl;
-    update(ptr);
-    cout<<"Value of a : "<< a << endl;
+    // int a = 5;
+    // cout<<"Address of a : "<< &a << endl;
+    // int* ptr = &a;
+    // cout<<"Address stored in ptr : "<< ptr << endl;
+    // cout<<"Address of ptr inside main function : "<< &ptr << endl;
+    // update(ptr);
+    // cout<<"Value of a : "<< a << endl;
+
+
+    // WILD POINTERS - AN UNINITIALIZED OR DELETED POINTERS
+    // int* ptr;
+    // cout<<*ptr<<endl;
+
+
+    // DELETING A POINTER
+    // int* ptr = new int;
+    // delete ptr;
+    // cout<<*ptr<<endl;
+
+
+    // VOID POINTERS -- USED FOR DYNAMIC MEMORY ALLOCATION
+    // void* ptr;
+    // int x = 10;
+    // ptr = &x;
+    // int* intPtr = static_cast<int*>(ptr);
+
+    // cout<<*intPtr;
+
+    // EXAMPLE OF USING A VOID POINTER FOR DYNAMIC MEMORY ALLOCATION
+    int* ptr = new int;
+    void* voidptr = ptr;
+    int* newptr = static_cast<int*>(voidptr);
+    *newptr = 10;
+    cout<<*ptr<<endl;
+
+
+
 
     return 0;
 }
