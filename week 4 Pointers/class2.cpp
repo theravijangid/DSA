@@ -137,14 +137,20 @@ int main() {
     // cout<<*intPtr;
 
     // EXAMPLE OF USING A VOID POINTER FOR DYNAMIC MEMORY ALLOCATION
-    int* ptr = new int;
-    void* voidptr = ptr;
-    int* newptr = static_cast<int*>(voidptr);
-    *newptr = 10;
-    cout<<*ptr<<endl;
+    // int* ptr = new int;
+    // void* voidptr = ptr;
+    // int* newptr = static_cast<int*>(voidptr);
+    // *newptr = 10;
+    // cout<<*ptr<<endl;
 
 
 
+    // DANGLING POINTERS
+    // int* ptr = new int;
+    // *ptr= 10;
+    // delete ptr;
+    // cout<<*ptr;
 
+    
     return 0;
 }
