@@ -38,25 +38,23 @@ int getGcd(int a, int b) {
     return a == 0 ? b : a;
 }
 
-int countPrime(int n) {
-    if(n == 0) return 0;
-    int ans = 0;
+vector<bool> Sieve(int n) {
 
     vector<bool> prime(n, true);
     prime[0] = prime[1] = false;
 
-    for(int i = 2; i < n; i++) {
+    for(int i = 2; i*i < n; i++) {
         if(prime[i]) {
-            ans++;
-            int j = 2 * i;
+            int j = i * i;
             while(j < n) {
                 prime[j] = false;
                 j= j + i;
             }
         }
     }
-    return ans;
+    return prime;
 }
+
 
 int main() {
     cout<< slowExponentiation(2, 3)<< endl;
@@ -67,6 +65,13 @@ int main() {
 
 
     // COUNTING PRIME USING SIEVE STRESTHENES
-    cout<< "Primes : "<< countPrime(1000)<< endl;
+    vector<bool> sieve = Sieve(10);
+    for(int i=0; i < 10; i++) {
+        if(sieve[i]) {
+            cout<<i<<" ";
+        }
+    }
+    
+
     return 0;
 }

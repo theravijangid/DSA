@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 void util(int* p) {
@@ -28,6 +29,16 @@ int* solve() {
     int* ans = &a;
     cout<<"ans ki value "<<ans<<endl;
     return ans;
+}
+
+bool isDuplicate(vector<int> a, int i) {
+
+  for(int j = 0; j < i;  j++) {
+    if(a[i] == a[j]) {
+        return true;
+    }
+  }
+  return false;
 }
 
 int main() {
@@ -111,5 +122,26 @@ int main() {
     // cout<<"After " << p<< endl;
 
 
-    cout<<"Return by reference : "<< solve() << endl;
+    // cout<<"Return by reference : "<< solve() << endl;
+
+    vector<int> a{4,3,1,3,1,2};
+
+    int count = 0;
+    for(int i = 0; i < a.size(); i++ ) {
+        if(!isDuplicate(a, i)) {
+            cout<<"not eual"<<a[i]<<" "<<i<<endl;
+            bool isunique = true;
+            for(int j= i + 1; j < a.size(); j++) {
+                if(a[i] == a[j]) {
+                    isunique = false;
+                    break;
+                }
+            }
+            if(isunique) {
+                count++;
+            }
+        }   
+    }
+    
+    cout<<"count : "<<count;
 }
