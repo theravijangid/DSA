@@ -34,10 +34,21 @@ int power(int n) {
     return 2 * power(n - 1);
 }
 
+
+int maximum(int arr[], int n) {
+    // B.C
+    if(n == 1) return arr[0];
+
+    // RR
+    int maxi = maximum(arr, n - 1);
+
+    return (arr[n - 1] > maxi) ? arr[n - 1] : maxi; 
+}
+
 int main() {
-    cout<<"Enter value for n : "<< endl;
-    int n;
-    cin>>n;
+    // cout<<"Enter value for n : "<< endl;
+    // int n;
+    // cin>>n;
 
     // int ans = factorial(n);
 
@@ -51,8 +62,16 @@ int main() {
 
 
     // Exponentiation
-    int ans = power(n);
-    cout<<"Power is "<<ans<<endl;
+    // int ans = power(n);
+    // cout<<"Power is "<<ans<<endl;
+
+
+    // find maximum in array
+    int arr[5] = {1,2,-1,4,3};
+    int n = 5;
+    int ans = maximum(arr, n);
+    cout<<"Maximum : "<<ans<<endl;
+
 
     return 0;
 }
