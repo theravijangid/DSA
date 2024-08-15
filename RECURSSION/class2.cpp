@@ -1,5 +1,6 @@
 #include<iostream>
 #include<limits.h>
+#include<vector>
 using namespace std;
 
 int climbStairs(int n) {
@@ -34,6 +35,51 @@ void findMax(int arr[], int n, int i, int& maxi) {
     findMax(arr, n, i+1, maxi);
 }
 
+
+void findMin(int arr[], int n, int i, int& mini) {
+    // B.C
+    if(i >= n) return;
+
+    if(arr[i] < mini) {
+        mini = arr[i];
+    }
+
+    findMin(arr, n, i + 1, mini);
+}
+
+
+int findKey(string str, char key, int i) {
+    // B.C
+    if(i >= str.length()) return -1;
+
+    if(str[i] == key) {
+        return i;
+    } else {
+        return findKey(str, key, i + 1);
+    }
+}
+
+
+void ckeckCountKey(string str, char key, int i, vector<int>& ans, int& count) {
+    // B.C
+    if(i >= str.length()) return;
+
+    if(str[i] == key) {
+        count++;
+        ans.push_back(i);
+    } 
+    return ckeckCountKey(str, key, i + 1, ans, count);
+}
+
+void printDigits(int n) {
+    // B.C
+    if(n <= 0) return;
+
+    printDigits(n/10);
+    int digit = n % 10;
+    cout<<digit<<" ";
+}
+
 int main(){
     // int n;
     // cout<<"Enter value for n"<< endl;
@@ -50,12 +96,53 @@ int main(){
 
 
     // find maximum
-    int arr[7] = {1,5,3,555 ,44,6,88};
-    int n = 7;
-    int i = 0;
-    int maxi = INT_MIN;
-    findMax(arr, n, i, maxi);
-    cout<<"Maximum is : "<< maxi << endl;
+    // int arr[7] = {1,5,3,555 ,44,6,88};
+    // int n = 7;
+    // int i = 0;
+    // int maxi = INT_MIN;
+    // findMax(arr, n, i, maxi);
+    // cout<<"Maximum is : "<< maxi << endl;
+
+
+    // find Minimum
+    // int arr[7] = {1,5,3,555 ,44,6,88};
+    // int n = 7;
+    // int i = 0;
+    // int mini = INT_MAX;
+    // findMin(arr, n, i, mini);
+    // cout<<"Minimum is : "<< mini << endl;
+
+
+    // finding key in string
+    // string str = "raviii";
+    // char key = 'i';
+    // int i = 0;
+    // bool found = findKey(str, key, i);
+    // if(found) {
+    //     cout<<"Found"<< endl;
+    // }
+    // else {
+    //     cout<<"Not found";
+    // }
+
+    // find index
+    // int found = findKey(str, key, i);
+    // cout<<"Index is : "<<found<<endl;
+
+    // vector<int> ans;
+    // int count = 0;
+    // ckeckCountKey(str, key, i, ans, count);
+    // for(auto val: ans) {
+    //     cout<<val << " ";
+    // }
+    // cout<<endl<< "Count : "<< count<<endl;
+
+
+    // Printing digits 
+    int n = 0623;
+    cout<<n<<endl;
+    printDigits(n);
+    
 
     return 0;
 } 
