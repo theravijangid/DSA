@@ -11,7 +11,7 @@ bool sortedOrNot(int arr[], int n, int i) {
     return sortedOrNot(arr, n, i+1);
 }
 
-int findTarget(vector<int> arr, int start, int end, int target) {
+int findTarget(vector<int>   arr, int start, int end, int target) {
     //B.C 
     if(start > end) return -1;
     int mid = (start + end) /2;
