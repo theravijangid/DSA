@@ -18,7 +18,7 @@ void printSubsequence(string str, string output, int i, vector<string>& v) {
 }
 
 int main() {
-    string str = "  ";
+    string str = "  ";  
     string output = "";
     vector<string> v;
     int i = 0;
