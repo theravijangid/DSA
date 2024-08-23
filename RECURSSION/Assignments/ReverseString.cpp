@@ -10,7 +10,7 @@ void reverse(string& str, int i, int j) {
 }
 
 int main() {
-    string str = "dcba";
+    string str = "d cba";
     int i = 0;
     int j = str.size() - 1;
     reverse(str, i, j);
