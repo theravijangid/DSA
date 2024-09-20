@@ -44,6 +44,7 @@ long mergerSort(vector<int> arr, vector<int> temp, int start, int end) {
     if(start >= end) return 0;
 
     int mid = start + (end - start)/2;
+    // int mid = (start + end) >> 1;  // same as divide by two
     long c = 0;
     c += mergerSort(arr, temp, start, mid);
     c += mergerSort(arr, temp, mid + 1, end);
