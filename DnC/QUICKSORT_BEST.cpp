@@ -17,7 +17,7 @@ void quickSort(int arr[], int start, int end) {
         }
         j++;
     }
-    i++;
+    i++;  // i is the right postion for pivot element
     swap(arr[i], arr[pivot]); // placed pivot at its right index or postion
 
     // RE call for left side sort
