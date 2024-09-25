@@ -33,8 +33,16 @@ class Animal {
     Animal (Animal &obj) {
         this->age = obj.age;
         this->weight = obj.weight;
+        this->name = obj.name;
         cout<<"Inside copy constructor" << endl;
     }
+
+    // Destructor
+    ~Animal() {
+        cout<<"Inside Destructor"<< endl;
+    }
+
+
     // behaviour
     void eat() {
         cout<< "Eating..."<< endl;
@@ -48,6 +56,8 @@ class Animal {
         return a + b;
     }
 
+    
+
     // These are use to access private properties outside class
     // getters 
     int getWeight() {
@@ -57,6 +67,10 @@ class Animal {
     // setters
     void setWeight(int weight) {
         this->weight = weight;
+    }
+    
+    void print() {
+        cout<< this->name <<" " << this->age<< " "<< this->weight<<endl;
     }
 };
 
@@ -98,14 +112,43 @@ int main() {
 
 
     //  constructor calling parametrised
-    Animal a(10);
-    Animal* dog = new Animal(10,100);
+    // Animal a(10);
+    // Animal* dog = new Animal(10,100);
 
-    // Copy contructor
-    Animal b = a; 
+    // // Copy contructor
+    // Animal b = a; 
 
-    // dusra tarika
-    Animal c(b);
+    // // dusra tarika
+    // Animal c(b);
+
+    // copy constructor deep vs shallow *** still unexplained ***
+    Animal a;
+    a.age = 12;
+    a.setWeight(42);
+    a.name = "Dog";
+
+    Animal b =a;
+    cout<<"a->";
+    a.print();
+    cout<<"b->";
+    b.print();
+
+    a.name[0] = 'F';
+    cout<<"a->";
+    a.print();
+
+    cout<<"b->";
+    b.print();
+
+    // Destructor
+    // Animal a;
+    // a.age = 5; 
+    // // Automatically called for static memory
+
+    // Animal* b = new Animal;
+    // b->age = 12;
+    // // manually destructor call in heap
+    // delete b;
 
     return 0;
 }
