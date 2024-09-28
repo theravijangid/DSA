@@ -117,6 +117,75 @@ class Fortuner: public Car{
 };
 
 
+
+// Polymorphism 
+// 1 -> compile time Polymorphism with // function overloading
+class Maths {
+    public:
+    // function overloading
+    // multiple / many forms of the sum function
+    int sum(int a, int b) {
+        cout<<"I am inside first signature" << endl;
+        return a + b;
+    }
+
+    int sum(int a, int b, int c) {
+        cout<<"I am inside second signature" << endl;
+        return a + b + c;
+    }
+
+    int sum(int a, float b) {
+        cout<<"I am inside third signature" << endl;
+        return a + b + 100;
+    }
+} ;
+
+
+// 1 -> compile time Polymorphism with // Operator overloading
+class Param {
+    public:
+    int val;
+
+    // Operator overloading
+    void operator+(Param& obj2) {
+        int val1 = this->val;   // curr obj
+        int val2 = obj2.val;   // input parameter
+        cout<< val2 - val1<< endl;
+    }
+};
+
+// h.w
+class Print {
+    public:
+    int num;
+    int height;
+    int weight;
+
+    Print() {
+        this->num = 5;
+        this->height = 176;
+        this->weight = 78;
+    }
+    //  =inside class if using friend
+    friend ostream& operator<<(ostream& os,const Print& obj) {
+        os << "num: " << obj.num << ", height: " << obj.height << ", weight: " << obj.weight << endl;
+        return os;
+    }
+
+    // Overloading the >> operator to input class members
+    friend istream& operator>>(istream& ip, Print& obj) {
+        cout << "Enter num, height, and weight: " << endl;
+        ip >> obj.num >> obj.height >> obj.weight;
+        return ip;
+    }
+};
+//  Done outside of the class if we are not using friend
+// Overloading the << operator and we use friend keyword to access private , protected members ex : friend ostream& operator<<(ostream& os, const Print& obj) 
+// ostream& operator<<(ostream& os,const Print& obj) {
+//     os << "num: " << obj.num << ", height: " << obj.height << ", weight: " << obj.weight << endl;
+//     return os;
+// }
+
 int main(){
     // inheritance
     // Dog d1;
@@ -141,10 +210,35 @@ int main(){
 
 
     // Heirarchical inheritance
-    Scorpio s;
-    Fortuner f;
-    cout<< s.name << " " << f.name << endl;
-    f.sppedUp();
+    // Scorpio s;
+    // Fortuner f;
+    // cout<< s.name << " " << f.name << endl;
+    // f.sppedUp();
+
+
+    // Polymorphism 
+    // 1 -> compile time Polymorphism
+    // function overloading
+    // Maths obj;
+    // cout<< obj.sum(10,2) << endl;
+    // cout<< obj.sum(10,2,50) << endl;
+    // cout<< obj.sum(10,2.5f) << endl;
+
+
+    // Operator overloading
+    // Param obj1, obj2;
+    // obj1.val = 7;
+    // obj2.val = 3;
+
+    // this shoul print the diffrence between them (using operator+ defn)
+    // obj1 + obj2;
+
+    // h.w
+    Print obj;
+    cout << obj << endl;
+    cin >> obj;
+    cout<< obj << endl;
+
 
     return 0;
 }  
