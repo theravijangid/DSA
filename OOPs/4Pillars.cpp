@@ -23,20 +23,20 @@ using namespace std;
 
 //  inheritance
 // parent class
-class Animal {
-    public:
-    int age;
-    int weight;
+// class Animal {
+//     public:
+//     int age;
+//     int weight;
 
-    void eat() {
-        cout<<"Eating"<< endl;
-    }
-};
+//     void eat() {
+//         cout<<"Eating"<< endl;
+//     }
+// };
 
-// child class
-class Dog:public Animal {
+// // child class
+// class Dog:public Animal {
 
-};
+// };
 
 // Single level inheritance
 // class Car {
@@ -186,6 +186,30 @@ class Print {
 //     return os;
 // }
 
+
+// 2 -> Runtime time Polymorphism 
+// Function overiding
+class Animal {
+    public:
+    Animal() {
+        cout<<"I am inside animal constructor" << endl;
+    }
+    virtual void speak() {
+        cout<<"Speaking" << endl;
+    }
+};
+class Dog:public Animal {
+    public:
+    Dog() {
+        cout<<"I am inside Dog constructor" << endl;
+    }
+    // overiding function
+    void speak() {
+        cout<<"Barking" << endl;
+    } 
+};
+
+
 int main(){
     // inheritance
     // Dog d1;
@@ -234,11 +258,31 @@ int main(){
     // obj1 + obj2;
 
     // h.w
-    Print obj;
-    cout << obj << endl;
-    cin >> obj;
-    cout<< obj << endl;
+    // Print obj;
+    // cout << obj << endl;
+    // cin >> obj;
+    // cout<< obj << endl;
 
+
+    // 2 -> Runtime time Polymorphism 
+    // Function overiding
+    // Animal a;
+    // a.speak();
+    // Dog d;
+    // d.speak();
+
+    // UpCasting
+    // Animal* a = new Dog();
+    // a->speak();
+
+    // DownCasting
+    // Dog* d =(Dog* ) new Animal();
+    // d->speak();
+
+    // Animal* a = new Animal();
+    // Dog* a = new Dog();   // Due to inheritance behaviour both parent contructor will be called and after that child contructor call
+    // Animal* a = new Dog();
+    Dog* a =(Dog*) new Animal();
 
     return 0;
 }  
