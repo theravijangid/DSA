@@ -282,7 +282,7 @@ int main(){
     // Animal* a = new Animal();
     // Dog* a = new Dog();   // Due to inheritance behaviour both parent contructor will be called and after that child contructor call
     // Animal* a = new Dog();
-    Dog* a =(Dog*) new Animal();
+    // Dog* a =(Dog*) new Animal();
 
     return 0;
 }  
